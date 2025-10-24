@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="fr" x-data="theme()" x-init="init()" :class="{ 'dark': isDark }">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>À propos — Mathilde Duvivier</title>
+  <meta name="description" content="À propos de Mathilde Duvivier — Étudiante en informatique à CESI Nice." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter'] }, colors: { brand: { 600: '#005ae6', 700: '#0046b3' } } } }, darkMode: 'class' }
+  </script>
+  <style> body { font-family: 'Inter', sans-serif; } </style>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100">
+  <header class="sticky top-0 z-50 border-b border-slate-200/60 dark:border-slate-800/60 bg-white/70 dark:bg-slate-900/60 backdrop-blur">
+    <nav class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 font-extrabold text-xl text-brand-700 dark:text-brand-300">
+        <span class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-brand-600 text-white">MD</span>
+        <span>Mathilde Duvivier</span>
+      </a>
+      <div class="flex items-center gap-2">
+        <a href="index.html" class="px-3 py-2 rounded-md text-sm font-semibold hover:bg-slate-100 dark:hover:bg-slate-800">Accueil</a>
+        <a href="projects.html" class="px-3 py-2 rounded-md text-sm font-semibold hover:bg-slate-100 dark:hover:bg-slate-800">Projets</a>
+        <a href="about.html" class="px-3 py-2 rounded-md text-sm font-semibold bg-slate-100 dark:bg-slate-800">À propos</a>
+        <a href="contact.html" class="px-3 py-2 rounded-md text-sm font-semibold hover:bg-slate-100 dark:hover:bg-slate-800">Contact</a>
+        <button @click="toggle()" class="ml-1 inline-flex items-center justify-center h-9 w-9 rounded-md border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800" :aria-label="isDark ? 'Désactiver le mode sombre' : 'Activer le mode sombre'">
+          <svg x-show="!isDark" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364 6.364-1.414-1.414M7.05 7.05 5.636 5.636m12.728 0-1.414 1.414M7.05 16.95l-1.414 1.414M12 8a4 4 0 100 8 4 4 0 000-8z" /></svg>
+          <svg x-show="isDark" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 py-10">
+    <section class="grid md:grid-cols-3 gap-8">
+      <div class="md:col-span-2">
+        <h1 class="text-3xl font-extrabold">À propos de moi</h1>
+        <p class="mt-3 text-slate-700 dark:text-slate-300">Étudiante à CESI Nice, je recherche un stage de 15 semaines entre avril et juillet 2026 dans le développement ou la cybersécurité. J’aime apprendre, coder et relever des défis techniques.</p>
+        <div class="mt-6">
+          <h2 class="text-xl font-bold">Parcours</h2>
+          <ol class="mt-3 relative border-l border-slate-300 dark:border-slate-700 pl-6 space-y-6">
+            <li>
+              <div class="absolute -left-2.5 top-0 h-5 w-5 rounded-full bg-brand-600"></div>
+              <h3 class="font-semibold">Lycée Simone Veil</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-400">Obtention du baccalauréat — Juillet 2024</p>
+            </li>
+            <li>
+              <div class="absolute -left-2.5 top-20 h-5 w-5 rounded-full bg-brand-600"></div>
+              <h3 class="font-semibold">CESI Nice</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-400">Formation en ingénierie informatique — 2024 à 2029</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+      <aside>
+        <h2 class="text-xl font-bold">Compétences</h2>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <span class="px-3 py-2 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 font-semibold text-sm">MySQL</span>
+          <span class="px-3 py-2 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 font-semibold text-sm">Arduino</span>
+          <span class="px-3 py-2 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 font-semibold text-sm">C++</span>
+          <span class="px-3 py-2 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 font-semibold text-sm">C</span>
+          <span class="px-3 py-2 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 font-semibold text-sm">Python</span>
+          <span class="px-3 py-2 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 font-semibold text-sm">HTML</span>
+          <span class="px-3 py-2 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 font-semibold text-sm">Scratch</span>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-200/60 dark:border-slate-800/60">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8 text-sm flex items-center justify-between">
+      <span>© <span id="year"></span> — Mathilde Duvivier</span>
+      <a href="cv-mathilde-duvivier.pdf" download class="hover:underline">CV</a>
+    </div>
+  </footer>
+
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script>
+    function theme(){return{isDark:false,init(){const s=localStorage.getItem('theme');if(s){this.isDark=s==='dark';return}this.isDark=window.matchMedia('(prefers-color-scheme: dark)').matches},toggle(){this.isDark=!this.isDark;localStorage.setItem('theme',this.isDark?'dark':'light')}}}
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
+
