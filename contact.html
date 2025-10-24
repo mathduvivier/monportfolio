@@ -7,6 +7,22 @@
   <meta name="description" content="Contacter Mathilde Duvivier — Étudiante en informatique à CESI Nice." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] },
+          colors: {
+            brand: {
+              50: '#e7f1ff', 100: '#cfe3ff', 200: '#a3c6ff', 300: '#77aaff', 400: '#4b8eff',
+              500: '#1f72ff', 600: '#005ae6', 700: '#0046b3', 800: '#003380', 900: '#00204d'
+            }
+          }
+        }
+      },
+      darkMode: 'class'
+    }
+  </script>
   <style>
     body { font-family: 'Inter', sans-serif; }
     .btn-primary {
