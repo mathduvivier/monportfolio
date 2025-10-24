@@ -83,7 +83,20 @@
 
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <script>
-    function theme(){return{isDark:false,init(){const s=localStorage.getItem('theme');if(s){this.isDark=s==='dark';return}this.isDark=window.matchMedia('(prefers-color-scheme: dark)').matches},toggle(){this.isDark=!this.isDark;localStorage.setItem('theme',this.isDark?'dark':'light')}}}
+    function theme() {
+      return {
+        isDark: false,
+        init() {
+          const stored = localStorage.getItem('theme');
+          if (stored) { this.isDark = stored === 'dark'; return }
+          this.isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        },
+        toggle() {
+          this.isDark = !this.isDark;
+          localStorage.setItem('theme', this.isDark ? 'dark' : 'light');
+        }
+      }
+    }
     function projects(){
       const all = [
         { id: 1, anchor: 'weather', title: 'Worldwide Weather Watcher', desc: 'Station météo connectée avec Arduino Uno et capteurs.', tags: ['Arduino','C++','MySQL'] },
